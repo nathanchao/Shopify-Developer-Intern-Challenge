@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+<body>
+    <h2>List of products (click on any cell in the table to edit it or click the "x" on the far right to delete an item)</h2>
+
+    <table id="table">
+      <tr>
+        <th>Product</th>
+        <th>Number Available</th>
+      </tr>
+      <tr>
+        <td contenteditable="true">Apple</td>
+        <td>
+            <form>
+                <input type="number" value="9">
+            </form>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Orange</td>
+        <td>
+            <form>
+                <input type="number" value="81">
+            </form>
+        </td>
+      </tr>
+
+    </table>
+    <a href="#" onclick="download_table_as_csv('table');">Download as CSV</a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="myDIV" class="header">
+      <h2>Create new product</h2>
+      <input type="text" id="newProductName" placeholder="Product Name">
+      <input type="text" id="newProductQuantity" placeholder="Number Available">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>
