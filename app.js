@@ -6,17 +6,11 @@ for (i = 1; i < myNodelist.length; i++) {
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Add delete functionality to each delete button
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
+  span.onclick = function() {
     var row = this.parentElement;
     row.parentNode.removeChild(row);
   }
+  myNodelist[i].appendChild(span);
 }
 
 // Create a new item in the table when clicking on the "Add" button
@@ -57,15 +51,11 @@ function newElement() {
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  tr.appendChild(span);
-
-  // add functionality to delete button
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var row = this.parentElement;
-      row.parentNode.removeChild(row);
-    }
+  span.onclick = function() {
+    var row = this.parentElement;
+    row.parentNode.removeChild(row);
   }
+  tr.appendChild(span);
 }
 
 function download_table_as_csv(table_id, separator = ',') {
