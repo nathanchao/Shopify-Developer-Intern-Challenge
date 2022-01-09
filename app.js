@@ -9,13 +9,13 @@ for (i = 1; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current item in the table
+// Add delete functionality to each delete button
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
+    var row = this.parentElement;
+    row.parentNode.removeChild(row);
   }
 }
 
@@ -47,7 +47,7 @@ function newElement() {
   } else {
     document.getElementById("table").appendChild(tr);
   }
-  
+
   // reset input fields
   document.getElementById("newProductQuantity").value = "";
   document.getElementById("newProductName").value = "";
@@ -62,8 +62,8 @@ function newElement() {
   // add functionality to delete button
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+      var row = this.parentElement;
+      row.parentNode.removeChild(row);
     }
   }
 }
