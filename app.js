@@ -87,7 +87,7 @@ function download_table_as_csv(table_id, separator = ',') {
     }
 
     var csv_string = csv.join('\n');
-    var filename = 'Inventory' + '.csv';
+    var filename = 'Inventory.csv';
     var link = document.createElement('a');
     link.style.display = 'none';
     link.setAttribute('target', '_blank');
